@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="enabledLocker"
+        android:title="Локер"
+        android:summary="Включить локер"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="useForgettingCurve"
+        android:title="Кривая забывания"
+        android:summary="Ротация слов используя кривую Эббингауза"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="showCorrectAnswer"
+        android:title="Ответы"
+        android:summary="Отображать правильный ответ при неправильном выборе"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="unlockScreen"
+        android:title="Блокировка"
+        android:summary="Разблокировать устройство при неправильном выборе"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="blitz"
+        android:title="Блиц тест"
+        android:summary="Серия из трех тестов на экране блокировки"/>
+    <ListPreference
+        android:key="numberOfAnswers"
+        android:entries="@array/number_of_answers"
+        android:entryValues="@array/number_of_answers"
+        android:defaultValue="3"
+        android:title="Количество вариантов ответов"
+        android:summary="%s"/>
+
+    <PreferenceCategory android:title="Настройки переводчика">
+    <ListPreference
+        android:key="langFrom"
+        android:entries="@array/lang_keys"
+        android:entryValues="@array/lang_values"
+        android:defaultValue="ru"
+        android:title="С какого языка переводить"
+        android:summary="%s"/>
+    <ListPreference
+        android:key="langTo"
+        android:entries="@array/lang_keys"
+        android:entryValues="@array/lang_values"
+        android:defaultValue="en"
+        android:title="На какой язык переводить"
+        android:summary="%s"/>
+    </PreferenceCategory>
+    <Preference
+        android:title="Удалить все данные из БД"
+        android:key="eraseDataBase"/>
+</PreferenceScreen>

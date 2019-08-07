@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="top|left">
+
+        <item android:id="@+id/action_search"
+            android:title="@string/find"
+            android:icon="@drawable/ic_search"
+            app:showAsAction="always"
+            app:actionViewClass="android.support.v7.widget.SearchView"
+            app:collapseIcon="@android:drawable/ic_menu_close_clear_cancel"/>
+
+        <group android:id="@+id/group_normal_mode">
+            <item android:id="@+id/action_add"
+                android:title="@string/add"
+                android:icon="@drawable/ic_add"
+                app:showAsAction="always"/>
+
+            <item android:id="@+id/action_start_delete_mode"
+                android:icon="@drawable/ic_delete"
+                android:title="@string/start_uninstall"
+                app:showAsAction="always"/>
+
+            <item android:id="@+id/action_train_mode"
+                android:title="@string/training"
+                android:icon="@drawable/ic_training"
+                app:showAsAction="always"/>
+
+            <item android:id="@+id/action_settings"
+                android:title="@string/settings"
+                android:icon="@drawable/ic_settings"
+                app:showAsAction="always"/>
+
+            <item android:id="@+id/action_help"
+                android:title="@string/info"
+                android:icon="@drawable/ic_help"
+                app:showAsAction="always"/>
+        </group>
+        <group android:id="@+id/group_delete_mode">
+            <item android:id="@+id/action_end_delete_mode"
+                android:title="@string/delete"
+                android:icon="@android:drawable/ic_menu_save"
+                app:showAsAction="always"/>
+            <item android:id="@+id/action_cancel_delete_mode"
+                android:title="@string/cancel"
+                android:icon="@android:drawable/ic_menu_close_clear_cancel"
+                app:showAsAction="always"/>
+        </group>
+</menu>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="defaultStatePressed">#BEBEBE</color>
+    <color name="defaultBackground">@android:color/darker_gray</color>
+    <color name="successBackground">#0D8D46</color>
+    <color name="failureBackground">#DB0C2B</color>
+    <color name="blackText">@android:color/background_dark</color>
+    <color name="whiteText">@android:color/white</color>
+</resources>

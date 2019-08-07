@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".TrainingActivity"
+    android:id="@+id/trainingLayout">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/trainingScreenQuestionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="@string/question"
+            android:textColor="@android:color/black"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/trainingScreenQuestionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/border_radius"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/trainingScreenAnswersLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="@string/answers"
+            android:textColor="@android:color/black"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/trainingScreenButton1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background_training"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/trainingScreenButton2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background_training"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/trainingScreenButton3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background_training"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/trainingScreenButton4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background_training"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/trainingScreenButton5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background_training"
+            android:visibility="invisible"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

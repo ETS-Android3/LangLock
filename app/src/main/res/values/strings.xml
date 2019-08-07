@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">LangLock</string>
+    <string name="notification_service_text">Изучение иностранных слов!</string>
+    <string name="db">langlock.realm</string>
+    <string name="apiKey"></string>
+    <string name="yaUrl">https://translate.yandex.net/api/v1.5/tr.json/translate?key=</string>
+    <string name="licenseYandexTranslate">
+        Яндекс.Переводчик — интернет-сервис, предоставляющий онлайновые
+        инструментальные средства для автоматического перевода слов,
+        фраз и предложений с одного языка на другой.
+        Яндекс оставляет за собой право устанавливать любые лимиты и ограничения,
+        включая далее перечисленное, но не ограничиваясь этим:
+        на объем переводимого текста - в размере до 1 000 000 символов в сутки,
+        но не более 10 000 000 символов месяц.
+        Яндекс может менять лимиты и ограничения по собственному усмотрению,
+        без предварительного письменного уведомления Пользователей.
+        При превышении установленных Яндексом ограничений на размер проверяемого
+        текста и/или на количество обращений к Сервису, Яндекс оставляет за собой
+        право отказать в доступе к Сервису.
+
+    </string>
+    <string name="question">вопрос:</string>
+    <string name="answers">варианты ответа:</string>
+    <string name="continuee">Продолжить</string>
+    <string name="find">Поиск</string>
+    <string name="add">Добавить</string>
+    <string name="start_uninstall">Начать удаление</string>
+    <string name="training">Тренировка</string>
+    <string name="settings">Настройки</string>
+    <string name="info">О программе</string>
+    <string name="delete">Удалить</string>
+    <string name="cancel">Отмена</string>
+</resources>

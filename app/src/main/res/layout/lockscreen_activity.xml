@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".LockScreenActivity"
+    android:background="@android:color/background_dark"
+    android:id="@+id/lockScreenLayout">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <TextClock
+                android:id="@+id/textClock2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:format24Hour="HH:mm"
+                android:text="Clock"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="80sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/lockScreenQuestionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="@string/question"
+            android:textColor="@android:color/white"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/lockScreenQuestionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/border_radius"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/lockScreenAnswersLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="@string/answers"
+            android:textColor="@android:color/white"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/lockScreenButton1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/lockScreenButton2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/lockScreenButton3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/lockScreenButton4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/lockScreenButton5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textSize="20sp"
+            android:background="@drawable/default_background"
+            android:visibility="invisible"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom">
+            <Button
+                android:id="@+id/lockScreenCloseButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2.5dp"
+                android:layout_marginBottom="2.5dp"
+                android:textSize="20sp"
+                android:text="@string/continuee"
+                android:background="@drawable/default_background"
+                android:visibility="invisible"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
