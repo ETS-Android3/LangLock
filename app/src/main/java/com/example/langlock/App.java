@@ -25,7 +25,6 @@ public class App extends Application {
         configureDatabase();
         DatabaseHelper.getInstance();
         createNotificationChannel();
-//        initLanguagesMap();
     }
 
     private void createNotificationChannel() {
@@ -49,7 +48,7 @@ public class App extends Application {
         Realm.init(getApplicationContext());
         RealmConfiguration config = new RealmConfiguration.Builder()
                 .name(getString(R.string.db))
-//                .initialData(setData())
+                .initialData(setData())
                 .build();
         Realm.setDefaultConfiguration(config);
     }
