@@ -24,13 +24,12 @@
             android:gravity="center_vertical">
             <TextClock
                 android:id="@+id/textClock2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:clickable="true"
                 android:format24Hour="HH:mm"
-                android:text="Clock"
-                android:textAlignment="center"
+                tools:text="@tools:sample/date/hhmm"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@android:color/white"
                 android:textSize="80sp"
                 app:layout_constraintEnd_toEndOf="parent"
