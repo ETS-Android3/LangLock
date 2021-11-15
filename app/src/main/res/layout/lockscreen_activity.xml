@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".LockScreenActivity"
+    tools:context="levkaantonov.com.study.langlock.LockScreenActivity"
     android:background="@android:color/background_dark"
     android:id="@+id/lockScreenLayout">
 
