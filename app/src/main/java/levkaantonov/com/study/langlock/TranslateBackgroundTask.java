@@ -35,7 +35,7 @@ public class TranslateBackgroundTask extends AsyncTask<String, Void, String>{
             String       url    = baseUrl + "/translate";
             OkHttpClient client = new OkHttpClient();
             RequestBody formBody = new FormBody.Builder()
-                    .add("q", text.toLowerCase(Locale.ROOT))
+                    .add("q", text.toLowerCase())
                     .add("source", from)
                     .add("target", to)
                     .add("format", "text")
@@ -51,7 +51,7 @@ public class TranslateBackgroundTask extends AsyncTask<String, Void, String>{
             Gson   gson = new Gson();
             if(response.isSuccessful()){
                 TranslatedText output = gson.fromJson(body, TranslatedText.class);
-                return output.translatedText;
+                return output.translatedText.toLowerCase();
             } else {
                 Error output = gson.fromJson(body, Error.class);
                 Log.e("MYTAG", output.error);

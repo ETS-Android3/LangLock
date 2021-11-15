@@ -1,6 +1,7 @@
 package levkaantonov.com.study.langlock;
 
 
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.realm.Realm;
@@ -87,8 +88,8 @@ public class Word extends RealmObject{
 
     static void create(Realm realm, Object... args){
         Word word = realm.createObject(Word.class, increment());
-        word.setWord(args[0].toString());
-        word.setTranslate(args[1].toString());
+        word.setWord(args[0].toString().toLowerCase());
+        word.setTranslate(args[1].toString().toLowerCase());
     }
 
     static void delete(Realm realm, long id){
