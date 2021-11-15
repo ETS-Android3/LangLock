@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity{
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-                String translatedText = translate(text, String.format("%s-%s", CURRENT_LANG_FROM, CURRENT_LANG_TO));
+                String translatedText = translate(text, CURRENT_LANG_FROM, CURRENT_LANG_TO);
                 editTextTranslate.setText(translatedText);
             }
         });
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity{
                                     Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        String translatedText = translate(text, String.format("%s-%s", CURRENT_LANG_FROM, CURRENT_LANG_TO));
+                        String translatedText = translate(text, CURRENT_LANG_FROM, CURRENT_LANG_TO);
                         translateText.setText(translatedText);
                     }
                 });
@@ -283,14 +283,13 @@ public class MainActivity extends AppCompatActivity{
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-    private String translate(String text, String lang){
+    private String translate(String text, String from, String to){
         if(task != null){
-            Log.d("MYTAG", "translate: " + task.cancel(true));
+            task.cancel(true);
         }
-        task = new TranslateBackgroundTask(
-                BuildConfig.api_key, getString(R.string.yaUrl));
+        task = new TranslateBackgroundTask(BuildConfig.api_key, getString(R.string.baseUrl));
         try{
-            return task.execute(text, lang).get();
+            return task.execute(text, from, to).get();
         }
         catch (ExecutionException e){
             e.printStackTrace();

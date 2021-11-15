@@ -3,85 +3,73 @@ package levkaantonov.com.study.langlock;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.google.gson.Gson;
+
+import java.util.Locale;
+
+import okhttp3.Call;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class TranslateBackgroundTask extends AsyncTask<String, Void, String>{
     private String apiKey;
-    private String yaUrl;
+    private String baseUrl;
 
-    TranslateBackgroundTask(String apiKey, String yaUrl){
+    TranslateBackgroundTask(String apiKey, String baseUrl){
         this.apiKey = apiKey;
-        this.yaUrl = yaUrl;
+        this.baseUrl = baseUrl;
     }
 
     @Override
     protected String doInBackground(String... params){
         try{
             if(isCancelled()) return null;
-            String textToBeTranslated = params[0];
-            String languagePair       = params[1];
 
-            String jsonString;
+            String text = params[0];
+            String from = params[1];
+            String to   = params[2];
 
-            Log.d("MYTAG", "doInBackground " + isCancelled());
-
-            String key = apiKey;
-            String url = yaUrl + key + "&text=" +
-                         textToBeTranslated + "&lang=" + languagePair;
-            Log.d("MYTAG", url);
-            URL completeUrl = new URL(url);
-
-            HttpURLConnection httpJsonConnection = (HttpURLConnection) completeUrl.openConnection();
-            InputStream       inputStream        = httpJsonConnection.getInputStream();
-            BufferedReader    bufferedReader     = new BufferedReader(new InputStreamReader(inputStream));
-
-            StringBuilder jsonStringBuilder = new StringBuilder();
-            while ((jsonString = bufferedReader.readLine()) != null) {
-                jsonStringBuilder.append(jsonString + "\n");
+            String       url    = baseUrl + "/translate";
+            OkHttpClient client = new OkHttpClient();
+            RequestBody formBody = new FormBody.Builder()
+                    .add("q", text.toLowerCase(Locale.ROOT))
+                    .add("source", from)
+                    .add("target", to)
+                    .add("format", "text")
+                    .build();
+            Request request = new Request.Builder()
+                    .url(url)
+                    .post(formBody)
+                    .build();
+            Call     call = client.newCall(request);
+            Response response;
+            response = call.execute();
+            String body = response.body().string();
+            Gson   gson = new Gson();
+            if(response.isSuccessful()){
+                TranslatedText output = gson.fromJson(body, TranslatedText.class);
+                return output.translatedText;
+            } else {
+                Error output = gson.fromJson(body, Error.class);
+                Log.e("MYTAG", output.error);
             }
-
-            bufferedReader.close();
-            inputStream.close();
-            httpJsonConnection.disconnect();
-
-            String resultString = jsonStringBuilder.toString().trim();
-
-            resultString = resultString.substring(resultString.indexOf('[') + 1);
-            resultString = resultString.substring(0, resultString.indexOf("]"));
-
-            resultString = resultString.substring(resultString.indexOf("\"") + 1);
-            resultString = resultString.substring(0, resultString.indexOf("\""));
-
-            return resultString;
-
         }
         catch (Exception e){
             if(e instanceof InterruptedException){
-                Log.d("MYTAG", "Interrupted");
                 e.printStackTrace();
             }
         }
         return null;
     }
+}
 
-    @Override protected void onCancelled(){
-        super.onCancelled();
-        Log.d("MYTAG", "onCancelled: ");
-    }
+class TranslatedText{
+    public String translatedText;
+}
 
-    @Override
-    protected void onPreExecute(){
-        super.onPreExecute();
-    }
-
-    @Override
-    protected void onProgressUpdate(Void... values){
-        super.onProgressUpdate(values);
-    }
+class Error{
+    public String error;
 }

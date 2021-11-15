@@ -2,7 +2,7 @@
     <string name="app_name">LangLock</string>
     <string name="notification_service_text">Изучение иностранных слов!</string>
     <string name="db">langlock.realm</string>
-    <string name="yaUrl">https://translate.yandex.net/api/v1.5/tr.json/translate?key=</string>
+    <string name="baseUrl">https://libretranslate.de</string>
     <string name="licenseYandexTranslate">
         \tЯндекс.Переводчик — интернет-сервис, предоставляющий онлайновые
         инструментальные средства для автоматического перевода слов,

@@ -1,195 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
     <resources>
     <string-array name="lang_keys" >
-        <item>азербайджанский        </item>
-        <item>албанский              </item>
-        <item>амхарский              </item>
-        <item>английский             </item>
-        <item>арабский               </item>
-        <item>армянский              </item>
-        <item>африкаанс              </item>
-        <item>баскский               </item>
-        <item>башкирский             </item>
-        <item>белорусский            </item>
-        <item>бенгальский            </item>
-        <item>бирманский             </item>
-        <item>болгарский             </item>
-        <item>боснийский             </item>
-        <item>валлийский             </item>
-        <item>венгерский             </item>
-        <item>вьетнамский            </item>
-        <item>гаитянский (креольский)</item>
-        <item>галисийский            </item>
-        <item>голландский            </item>
-        <item>горномарийский         </item>
-        <item>греческий              </item>
-        <item>грузинский             </item>
-        <item>гуджарати              </item>
-        <item>датский                </item>
-        <item>иврит                  </item>
-        <item>идиш                   </item>
-        <item>индонезийский          </item>
-        <item>ирландский             </item>
-        <item>итальянский            </item>
-        <item>исландский             </item>
-        <item>испанский              </item>
-        <item>казахский              </item>
-        <item>каннада                </item>
-        <item>каталанский            </item>
-        <item>киргизский             </item>
-        <item>китайский              </item>
-        <item>корейский              </item>
-        <item>коса                   </item>
-        <item>кхмерский              </item>
-        <item>лаосский               </item>
-        <item>латынь                 </item>
-        <item>латышский              </item>
-        <item>литовский              </item>
-        <item>люксембургский         </item>
-        <item>малагасийский          </item>
-        <item>малайский              </item>
-        <item>малаялам               </item>
-        <item>мальтийский            </item>
-        <item>македонский            </item>
-        <item>маори                  </item>
-        <item>маратхи                </item>
-        <item>марийский              </item>
-        <item>монгольский            </item>
-        <item>немецкий               </item>
-        <item>непальский             </item>
-        <item>норвежский             </item>
-        <item>панджаби               </item>
-        <item>папьяменто             </item>
-        <item>персидский             </item>
-        <item>польский               </item>
-        <item>португальский          </item>
-        <item>румынский              </item>
-        <item>русский                </item>
-        <item>себуанский             </item>
-        <item>сербский               </item>
-        <item>сингальский            </item>
-        <item>словацкий              </item>
-        <item>словенский             </item>
-        <item>суахили                </item>
-        <item>сунданский             </item>
-        <item>таджикский             </item>
-        <item>тайский                </item>
-        <item>тагальский             </item>
-        <item>тамильский             </item>
-        <item>татарский              </item>
-        <item>телугу                 </item>
-        <item>турецкий               </item>
-        <item>удмуртский             </item>
-        <item>узбекский              </item>
-        <item>украинский             </item>
-        <item>урду                   </item>
-        <item>финский                </item>
-        <item>французский            </item>
-        <item>хинди                  </item>
-        <item>хорватский             </item>
-        <item>чешский                </item>
-        <item>шведский               </item>
-        <item>шотландский            </item>
-        <item>эстонский              </item>
-        <item>эсперанто              </item>
-        <item>яванский               </item>
-        <item>японский               </item>
+        <item>English</item>
+        <item>Arabic</item>
+        <item>Chinese</item>
+        <item>Dutch</item>
+        <item>Finnish</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Hindi</item>
+        <item>Hungarian</item>
+        <item>Indonesian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Polish</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Spanish</item>
+        <item>Swedish</item>
+        <item>Turkish</item>
+        <item>Ukranian</item>
+        <item>Vietnamese</item>
     </string-array>
 
     <string-array name="lang_values">
-        <item>az  </item>
-        <item>sq  </item>
-        <item>am  </item>
-        <item>en  </item>
-        <item>ar  </item>
-        <item>hy  </item>
-        <item>af  </item>
-        <item>eu  </item>
-        <item>ba  </item>
-        <item>be  </item>
-        <item>bn  </item>
-        <item>my  </item>
-        <item>bg  </item>
-        <item>bs  </item>
-        <item>cy  </item>
-        <item>hu  </item>
-        <item>vi  </item>
-        <item>ht  </item>
-        <item>gl  </item>
-        <item>nl  </item>
-        <item>mrj </item>
-        <item>el  </item>
-        <item>ka  </item>
-        <item>gu  </item>
-        <item>da  </item>
-        <item>he  </item>
-        <item>yi  </item>
-        <item>id  </item>
-        <item>ga  </item>
-        <item>it  </item>
-        <item>is  </item>
-        <item>es  </item>
-        <item>kk  </item>
-        <item>kn  </item>
-        <item>ca  </item>
-        <item>ky  </item>
-        <item>zh  </item>
-        <item>ko  </item>
-        <item>xh  </item>
-        <item>km  </item>
-        <item>lo  </item>
-        <item>la  </item>
-        <item>lv  </item>
-        <item>lt  </item>
-        <item>lb  </item>
-        <item>mg  </item>
-        <item>ms  </item>
-        <item>ml  </item>
-        <item>mt  </item>
-        <item>mk  </item>
-        <item>mi  </item>
-        <item>mr  </item>
-        <item>mhr </item>
-        <item>mn  </item>
-        <item>de  </item>
-        <item>ne  </item>
-        <item>no  </item>
-        <item>pa  </item>
-        <item>pap </item>
-        <item>fa  </item>
-        <item>pl  </item>
-        <item>pt  </item>
-        <item>ro  </item>
-        <item>ru  </item>
-        <item>ceb </item>
-        <item>sr  </item>
-        <item>si  </item>
-        <item>sk  </item>
-        <item>sl  </item>
-        <item>sw  </item>
-        <item>su  </item>
-        <item>tg  </item>
-        <item>th  </item>
-        <item>tl  </item>
-        <item>ta  </item>
-        <item>tt  </item>
-        <item>te  </item>
-        <item>tr  </item>
-        <item>udm </item>
-        <item>uz  </item>
-        <item>uk  </item>
-        <item>ur  </item>
-        <item>fi  </item>
-        <item>fr  </item>
-        <item>hi  </item>
-        <item>hr  </item>
-        <item>cs  </item>
-        <item>sv  </item>
-        <item>gd  </item>
-        <item>et  </item>
-        <item>eo  </item>
-        <item>jv  </item>
-        <item>ja  </item>
+        <item>en</item>
+        <item>ar</item>
+        <item>zh</item>
+        <item>nl</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>de</item>
+        <item>hi</item>
+        <item>hu</item>
+        <item>id</item>
+        <item>ga</item>
+        <item>it</item>
+        <item>ja</item>
+        <item>ko</item>
+        <item>pl</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>es</item>
+        <item>sv</item>
+        <item>tr</item>
+        <item>uk</item>
+        <item>vi</item>
     </string-array>
 
     <string-array name="number_of_answers">
