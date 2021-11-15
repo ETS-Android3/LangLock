@@ -9,7 +9,8 @@ import android.widget.ImageView;
 
 
 public class AboutActivity extends AppCompatActivity{
-    private ImageView yaLogo;
+    private ImageView logo;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -17,11 +18,11 @@ public class AboutActivity extends AppCompatActivity{
         setContentView(R.layout.about_activity);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        yaLogo = findViewById(R.id.yandexLogo);
-        yaLogo.setOnClickListener(new View.OnClickListener(){
+        logo = findViewById(R.id.logo);
+        logo.setOnClickListener(new View.OnClickListener(){
             @Override public void onClick(View v){
                 Intent intent = new Intent("android.intent.action.VIEW");
-                intent.setData(Uri.parse("http://translate.yandex.ru/"));
+                intent.setData(Uri.parse(getString(R.string.baseUrl)));
                 AboutActivity.this.startActivity(intent);
             }
         });

@@ -1,5 +1,6 @@
 package levkaantonov.com.study.langlock;
 
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.realm.Realm;
@@ -10,9 +11,8 @@ public class Word extends RealmObject{
     //region Fields
     public static final String        FIELD_ID        = "id";
     private static      AtomicInteger INTEGER_COUNTER = new AtomicInteger(0);
-
     @PrimaryKey
-    private Integer id;
+    private             Integer       id;
 
     public Integer getId(){
         return id;
@@ -56,6 +56,7 @@ public class Word extends RealmObject{
     //region Ctors
 
     public Word(){
+
     }
 
     public Word(Integer id, String word, String translate){
@@ -77,7 +78,11 @@ public class Word extends RealmObject{
     //region Methods
 
     public static int increment(){
-        return INTEGER_COUNTER.getAndIncrement();
+        return INTEGER_COUNTER.incrementAndGet();
+    }
+
+    public static void setupIncrement(int id){
+        INTEGER_COUNTER.compareAndSet(0, id);
     }
 
     static void create(Realm realm, Object... args){

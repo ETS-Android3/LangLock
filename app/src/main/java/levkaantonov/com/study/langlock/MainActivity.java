@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 import io.realm.OrderedRealmCollection;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.main_activity);
 
         realm = Realm.getDefaultInstance();
+        Word.setupIncrement(Objects.requireNonNull(realm.where(Word.class).max(Word.FIELD_ID)).intValue());
         recyclerView = findViewById(R.id.words_recycler_view);
         setUpRecyclerView();
 
@@ -145,7 +147,9 @@ public class MainActivity extends AppCompatActivity{
         final LayoutInflater      inflater = this.getLayoutInflater();
         View                      view     = inflater.inflate(R.layout.word_dialog, null);
         builder.setView(view);
-        final Dialog dialog = builder.create();
+        final Dialog dialog = builder
+                .setCancelable(false)
+                .create();
 
         final EditText editTextWord      = view.findViewById(R.id.editTextWord);
         final EditText editTextTranslate = view.findViewById(R.id.editTextTranslate);

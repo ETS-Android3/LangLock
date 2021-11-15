@@ -10,11 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        def properties = new Properties()
-        if (rootProject.file("local.properties").exists()) {
-            properties.load(new FileInputStream(rootProject.file("local.properties")))
-        }
-        buildConfigField "String", "api_key", "\"${properties["api.key"]}\""
+        buildConfigField "String", "api_key", "\"${UUID.randomUUID()}\""
     }
     buildTypes {
         release {
