@@ -7,8 +7,8 @@ android {
         applicationId "levkaantonov.com.study.langlock"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.1"
 
         buildConfigField "String", "api_key", "\"${UUID.randomUUID()}\""
     }
