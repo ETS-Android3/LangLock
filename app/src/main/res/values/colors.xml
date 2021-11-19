@@ -7,7 +7,8 @@
     <color name="defaultBackground">#aaa</color>
     <color name="successBackground">#0D8D46</color>
     <color name="failureBackground">#DB0C2B</color>
-    <color name="blackText">@android:color/background_dark</color>
-    <color name="whiteText">@android:color/white</color>
+    <color name="blackText">#ff000000</color>
+    <color name="whiteText">#ffffffff</color>
     <color name="translated_word_color">#6A6565</color>
+    <color name="white">#ffffffff</color>
 </resources>
