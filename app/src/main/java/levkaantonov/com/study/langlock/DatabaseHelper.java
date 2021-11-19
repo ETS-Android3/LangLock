@@ -115,7 +115,7 @@ public class DatabaseHelper{
 
     public static boolean eraseDataFromDb(Realm realm){
         try{
-            realm.executeTransaction(new Realm.Transaction(){
+            realm.executeTransactionAsync(new Realm.Transaction(){
                 @Override public void execute(Realm realm){
                     realm.deleteAll();
                 }
@@ -125,6 +125,7 @@ public class DatabaseHelper{
         catch (Exception e){
             Toast.makeText(App.getInstance().getApplicationContext(), "Ошибка базы данных.",
                     Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
             return false;
         }
     }

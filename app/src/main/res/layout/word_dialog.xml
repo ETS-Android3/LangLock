@@ -9,49 +9,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:maxLines="5"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:backgroundTint="#E0DDDD"
-        android:hint="слово"
-        />
+        android:hint="@string/word"/>
 
     <EditText
         android:id="@+id/editTextTranslate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextWord"
+        android:maxLines="5"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:backgroundTint="#E0DDDD"
-        android:hint="перевод" />
+        android:hint="@string/translate" />
 
     <Button
         android:id="@+id/translateText"
         android:layout_below="@+id/editTextTranslate"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="перевести"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/action_translate"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/dialogCancel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/translateText">
+        android:layout_below="@+id/translateText"
+        android:layout_toStartOf="@id/space"
+        android:layout_alignParentStart="true"
+        android:text="@string/cancel"/>
 
-        <Button
-            android:id="@+id/dialogCancel"
-            android:layout_below="@+id/translateText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="отмена"
-            android:layout_weight="1"/>
+    <Space
+        android:id="@+id/space"
+        android:layout_below="@id/translateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
 
-        <Button
-            android:id="@+id/dialogOk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ок"
-            android:layout_weight="1"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/dialogOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/space"
+        android:layout_below="@+id/translateText"
+        android:layout_alignParentEnd="true"
+        android:text="@string/ok" />
 
 </RelativeLayout>

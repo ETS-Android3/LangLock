@@ -9,22 +9,26 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.support.v4.app.NotificationCompat;
 import android.support.annotation.Nullable;
-import android.util.Log;
+import android.support.v4.app.NotificationCompat;
 
 public class LockScreenService extends Service {
     BroadcastReceiver mReceiver;
+    private Boolean mReceiverIsRegistered = false;
 
     @Override
     public void onCreate() {
-        Log.e(Misc.DEBUG_TAG, "Сервис onCreate");
         super.onCreate();
+        mReceiver = new LockScreenReceiver();
+        mReceiverIsRegistered = true;
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.e(Misc.DEBUG_TAG, "Сервис onStartCommand");
+        if(!mReceiverIsRegistered){
+            unregisterReceiver(mReceiver);
+            mReceiverIsRegistered = false;
+        }
         KeyguardManager.KeyguardLock keyguardLock;
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
         keyguardLock = keyguardManager.newKeyguardLock("IN");
@@ -35,12 +39,15 @@ public class LockScreenService extends Service {
             Intent startActivityIntent = new Intent(this, LockScreenActivity.class);
             startActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             this.startActivity(startActivityIntent);
+            return START_STICKY;
         }
 
-        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+        IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        mReceiver = new LockScreenReceiver();
+        intentFilter.addAction(Intent.ACTION_SCREEN_ON);
+
         registerReceiver(mReceiver, intentFilter);
+        mReceiverIsRegistered = true;
 
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
@@ -56,15 +63,14 @@ public class LockScreenService extends Service {
                 .build();
         startForeground(1, notification);
 
-        //do heavy work on a background thread
         return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
-        Log.e(Misc.DEBUG_TAG, "Сервис onDestroy");
-        super.onDestroy();
         unregisterReceiver(mReceiver);
+        mReceiverIsRegistered = false;
+        super.onDestroy();
     }
 
     @Nullable

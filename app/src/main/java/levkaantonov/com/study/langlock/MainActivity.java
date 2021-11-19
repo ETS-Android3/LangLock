@@ -47,7 +47,12 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.main_activity);
 
         realm = Realm.getDefaultInstance();
-        Word.setupIncrement(Objects.requireNonNull(realm.where(Word.class).max(Word.FIELD_ID)).intValue());
+        Number count = realm.where(Word.class).max(Word.FIELD_ID);
+        Word.setupIncrement(
+                Objects.requireNonNull(
+                        count == null ? 0 : count
+                ).intValue()
+        );
         recyclerView = findViewById(R.id.words_recycler_view);
         setUpRecyclerView();
 

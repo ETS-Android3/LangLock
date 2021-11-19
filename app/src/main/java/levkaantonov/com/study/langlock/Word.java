@@ -1,7 +1,6 @@
 package levkaantonov.com.study.langlock;
 
 
-import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.realm.Realm;

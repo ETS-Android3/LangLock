@@ -1,5 +1,9 @@
 package levkaantonov.com.study.langlock;
 
+import static levkaantonov.com.study.langlock.Misc.NUMBER_OF_ANSWERS;
+import static levkaantonov.com.study.langlock.Misc.PREVIOUS_WORD;
+import static levkaantonov.com.study.langlock.Misc.SHOW_CORRECT_ANSWER;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -12,10 +16,6 @@ import android.widget.TextView;
 import java.util.Random;
 
 import io.realm.Realm;
-
-import static levkaantonov.com.study.langlock.Misc.NUMBER_OF_ANSWERS;
-import static levkaantonov.com.study.langlock.Misc.PREVIOUS_WORD;
-import static levkaantonov.com.study.langlock.Misc.SHOW_CORRECT_ANSWER;
 
 public class TrainingActivity extends AppCompatActivity implements View.OnClickListener{
     private final Random   random = new Random();

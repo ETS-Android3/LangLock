@@ -91,21 +91,18 @@ public class LockScreenActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onDestroy(){
-        super.onDestroy();
         realm.close();
+        super.onDestroy();
     }
 
     @Override protected void onStop(){
         super.onStop();
         makeTest();
-        Log.e(Misc.DEBUG_TAG, "LockScreenActivity onStop");
     }
 
     @Override protected void onStart(){
         super.onStart();
         hideNavBar();
-
-        Log.e(Misc.DEBUG_TAG, "LockScreenActivity onStart");
     }
 
     @SuppressLint("NewApi")

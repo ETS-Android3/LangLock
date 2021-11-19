@@ -1,11 +1,8 @@
 package levkaantonov.com.study.langlock;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.google.gson.Gson;
-
-import java.util.Locale;
 
 import okhttp3.Call;
 import okhttp3.FormBody;
@@ -54,7 +51,6 @@ public class TranslateBackgroundTask extends AsyncTask<String, Void, String>{
                 return output.translatedText.toLowerCase();
             } else {
                 Error output = gson.fromJson(body, Error.class);
-                Log.e("MYTAG", output.error);
             }
         }
         catch (Exception e){
